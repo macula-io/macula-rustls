@@ -4,7 +4,7 @@ Vendored fork of [rustls/rustls](https://github.com/rustls/rustls) at
 version `0.23.40`, mechanically widened so the entire `feature = "std"`
 surface activates on `target_os = "none"` via the [`macula-std`] shim.
 
-Used by [macula-kernel](https://codeberg.org/macula-internal/macula-kernel)
+Used by [macula-kernel](https://github.com/macula-io/macula-kernel)
 as the TLS crypto backend for kernel-resident `quinn-proto`. quinn-proto
 reaches into the `rustls::quic::{Connection, ClientConnection,
 ServerConnection}` high-level wrapper types + the `builder_with_provider`
@@ -13,7 +13,7 @@ gated behind `feature = "std"`. We cannot enable that feature directly
 because rustls does `extern crate std;` under it, and the kernel target
 has no `std` crate.
 
-[`macula-std`]: https://codeberg.org/macula-internal/macula-std
+[`macula-std`]: https://github.com/macula-io/macula-std
 
 ## The patches
 
@@ -51,7 +51,7 @@ identical.
 
 ```diff
 +[target.'cfg(target_os = "none")'.dependencies.macula-std]
-+git = "https://codeberg.org/macula-internal/macula-std.git"
++git = "https://github.com/macula-io/macula-std.git"
 +branch = "main"
 ```
 

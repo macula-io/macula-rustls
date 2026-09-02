@@ -239,5 +239,5 @@ check-cfg = [
 # gates throughout the source activate the same surface that the std
 # feature unlocks on host builds.
 [target.'cfg(target_os = "none")'.dependencies.macula-std]
-git = "https://codeberg.org/macula-internal/macula-std.git"
+git = "https://github.com/macula-io/macula-std.git"
 branch = "main"
